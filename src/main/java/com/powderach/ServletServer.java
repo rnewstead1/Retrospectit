@@ -12,9 +12,10 @@ import static org.eclipse.jetty.servlet.ServletContextHandler.SESSIONS;
 public class ServletServer {
 
     private static final String ROOT_CONTEXT = "/retrospectit";
+    private final Server server;
 
-    public static void main(String[] args) throws Exception {
-        Server server = new Server(8080);
+    public ServletServer(int port) {
+        this.server = new Server(port);
 
         ServletContextHandler baseContextHandler = new ServletContextHandler(SESSIONS);
         baseContextHandler.setContextPath(ROOT_CONTEXT);
@@ -28,14 +29,15 @@ public class ServletServer {
         ContextHandler resourceContextHandler = new ContextHandler(ROOT_CONTEXT);
         resourceContextHandler.setHandler(staticResourceHandler);
 
-
         ContextHandlerCollection handlers = new ContextHandlerCollection();
         handlers.addHandler(baseContextHandler);
         handlers.addHandler(resourceContextHandler);
 
         server.setHandler(handlers);
+    }
+
+    public void start() throws Exception {
         server.start();
         server.join();
     }
-
 }
