@@ -5,6 +5,7 @@ import org.antlr.stringtemplate.StringTemplateGroup;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 
 import static java.util.Arrays.asList;
 
@@ -26,7 +27,17 @@ public class Page {
     }
 
     private List<Activity> activities() {
-        return asList(Activity.values());
+        return asList(
+                activityFor(SetTheScene.values()),
+                activityFor(GatherData.values()),
+                activityFor(GenerateInsights.values()),
+                activityFor(DecideWhatToDo.values()),
+                activityFor(CloseRetrospective.values())
+                );
+    }
+
+    private Activity activityFor(Activity[] activies) {
+        return activies[new Random().nextInt(activies.length)];
     }
 
 }

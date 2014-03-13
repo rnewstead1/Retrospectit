@@ -1,5 +1,7 @@
 package com.powderach;
 
+import static com.powderach.StringUtils.unCamel;
+
 public enum ActivityType {
     SetTheScene,
     GatherData,
@@ -12,12 +14,4 @@ public enum ActivityType {
         return unCamel(name());
     }
 
-    private String unCamel(String string) {
-        String[] split = string.split("(?=[A-Z])");
-        StringBuilder stringBuilder = new StringBuilder();
-        for (String s : split) {
-            stringBuilder.append(s).append(" ");
-        }
-        return stringBuilder.toString().trim();
-    }
 }
