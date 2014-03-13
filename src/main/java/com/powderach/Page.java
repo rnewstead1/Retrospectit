@@ -4,6 +4,9 @@ import org.antlr.stringtemplate.StringTemplate;
 import org.antlr.stringtemplate.StringTemplateGroup;
 
 import java.io.IOException;
+import java.util.List;
+
+import static java.util.Arrays.asList;
 
 public class Page {
     private final StringTemplateGroup templates;
@@ -16,9 +19,14 @@ public class Page {
         StringTemplate page = templates.getInstanceOf("page");
         StringTemplate body = templates.getInstanceOf("body");
         page.setAttribute("body", body);
+        page.setAttribute("activities", activities());
         page.setAttribute("title", "Retrospectit");
 
         return page.toString();
+    }
+
+    private List<Activity> activities() {
+        return asList(Activity.values());
     }
 
 }
