@@ -1,14 +1,8 @@
 package core;
 
 public enum DecideWhatToDo implements Activity {
-    SMARTGoals("For each point discussed further come up with a SMART goal. Can be done in small teams if there are lots of issues and/or people."),
+    SMARTGoals,
     ;
-
-    private final String description;
-
-    DecideWhatToDo(String description) {
-        this.description = description;
-    }
 
     @Override
     public String getTitle() {
@@ -22,6 +16,6 @@ public enum DecideWhatToDo implements Activity {
 
     @Override
     public String getDescription() {
-        return description;
+        return DescriptionReader.descriptionFor(name());
     }
 }

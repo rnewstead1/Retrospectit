@@ -1,13 +1,8 @@
 package core;
 
 public enum SetTheScene implements Activity {
-    ExplorerShopperVacationerPrisoner("Each person writes a letter on a piece of paper to represent which position they are taking at the start of the retrospective. Answers are kept anonymous and totalled as a histogram to ascertain the mood of the group."),
+    ExplorerShopperVacationerPrisoner,
     ;
-    private final String description;
-
-    SetTheScene(String description) {
-        this.description = description;
-    }
 
     @Override
     public String getTitle() {
@@ -21,6 +16,6 @@ public enum SetTheScene implements Activity {
 
     @Override
     public String getDescription() {
-        return description;
+        return DescriptionReader.descriptionFor(name());
     }
 }

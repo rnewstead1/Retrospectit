@@ -27,7 +27,6 @@ public class DescriptionReaderTest {
 
     @Test
     public void readsDescriptionFromFile() throws Exception {
-        DescriptionReader descriptionReader = new DescriptionReader(descriptionFolder.getRoot());
-        assertThat(descriptionReader.descriptionFor("Foo"), is("Hello World."));
+        assertThat(DescriptionReader.descriptionFor(descriptionFolder.getRoot(), "Foo"), is("Hello World."));
     }
 }

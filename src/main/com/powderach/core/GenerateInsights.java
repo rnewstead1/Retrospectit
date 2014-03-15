@@ -1,14 +1,8 @@
 package core;
 
 public enum GenerateInsights implements Activity {
-    Fishbone("Build issues from each problem in the shape of a fishbone, use the WH questions."),
+    Fishbone,
     ;
-
-    private final String description;
-
-    GenerateInsights(String description) {
-        this.description = description;
-    }
 
     @Override
     public String getTitle() {
@@ -22,6 +16,6 @@ public enum GenerateInsights implements Activity {
 
     @Override
     public String getDescription() {
-        return description;
+        return DescriptionReader.descriptionFor(name());
     }
 }
