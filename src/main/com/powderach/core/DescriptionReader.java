@@ -12,14 +12,14 @@ public class DescriptionReader {
         this.folderLocation = folderLocation;
     }
 
-    public static String descriptionFor(String name) {
-        return descriptionFor(new File("../retrospectit/src/main/com/powderach/core/descriptions"), name);
+    public static String descriptionFor(String filename) {
+        return descriptionFor(new File("../retrospectit/src/main/com/powderach/core/descriptions"), filename);
     }
 
-    protected static String descriptionFor(File folderLocation, String name) {
+    protected static String descriptionFor(File folderLocation, String filename) {
         StringBuilder stringBuilder = new StringBuilder();
         try {
-            String location = String.format("%s/%s.txt", folderLocation.getPath(), name);
+            String location = String.format("%s/%s.txt", folderLocation.getPath(), filename);
             BufferedReader reader = new BufferedReader(new FileReader(location));
             String currentLine;
             while ((currentLine = reader.readLine()) != null) {

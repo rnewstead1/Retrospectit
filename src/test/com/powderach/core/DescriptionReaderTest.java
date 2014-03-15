@@ -21,12 +21,12 @@ public class DescriptionReaderTest {
     public void setUp() throws Exception {
         File descriptionFile = descriptionFolder.newFile("Foo.txt");
         BufferedWriter output = new BufferedWriter(new FileWriter(descriptionFile));
-        output.write("Hello World.");
+        output.write("Hello World.\nHow ya doin?");
         output.close();
     }
 
     @Test
     public void readsDescriptionFromFile() throws Exception {
-        assertThat(DescriptionReader.descriptionFor(descriptionFolder.getRoot(), "Foo"), is("Hello World."));
+        assertThat(DescriptionReader.descriptionFor(descriptionFolder.getRoot(), "Foo"), is("Hello World.\nHow ya doin?"));
     }
 }

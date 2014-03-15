@@ -1,5 +1,7 @@
 package core;
 
+import core.utils.StringUtils;
+
 public enum SetTheScene implements Activity {
     ExplorerShopperVacationerPrisoner,
     ;

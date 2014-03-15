@@ -1,6 +1,6 @@
-package core;
+package core.utils;
 
-import core.StringUtils;
+import core.utils.StringUtils;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
