@@ -1,13 +1,14 @@
 package core;
 
+import java.io.File;
+
 public enum CloseRetrospective implements Activity {
-    ReturnOnTimeInvested("Everyone votes on a scale of 0 - 4 where 0 is no benefit for the time invested, 2 is breaking even, and 4 is greater benefit received than the time invested."),
+    ReturnOnTimeInvested,
     ;
+    private final DescriptionReader descriptionReader;
 
-    private final String description;
-
-    CloseRetrospective(String description) {
-        this.description = description;
+    CloseRetrospective() {
+        this.descriptionReader = new DescriptionReader(new File("../retrospectit/src/main/com/powderach/core/descriptions"));
     }
 
     @Override
@@ -22,6 +23,6 @@ public enum CloseRetrospective implements Activity {
 
     @Override
     public String getDescription() {
-        return description;
+        return descriptionReader.descriptionFor(name());
     }
 }
