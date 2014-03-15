@@ -1,7 +1,4 @@
-package com.powderach;
-
-import static com.powderach.ActivityType.GenerateInsights;
-import static com.powderach.StringUtils.unCamel;
+package core;
 
 public enum GenerateInsights implements Activity {
     Fishbone("Build issues from each problem in the shape of a fishbone, use the WH questions."),
@@ -15,12 +12,12 @@ public enum GenerateInsights implements Activity {
 
     @Override
     public String getTitle() {
-        return unCamel(name());
+        return StringUtils.unCamel(name());
     }
 
     @Override
     public ActivityType getType() {
-        return GenerateInsights;
+        return ActivityType.GenerateInsights;
     }
 
     @Override

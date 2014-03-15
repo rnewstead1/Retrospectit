@@ -1,6 +1,4 @@
-package com.powderach;
-
-import static com.powderach.StringUtils.unCamel;
+package core;
 
 public enum ActivityType {
     SetTheScene,
@@ -11,7 +9,7 @@ public enum ActivityType {
     ;
 
     public String getTitle() {
-        return unCamel(name());
+        return StringUtils.unCamel(name());
     }
 
 }

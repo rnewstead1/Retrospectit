@@ -1,6 +1,4 @@
-package com.powderach;
-
-import static com.powderach.StringUtils.unCamel;
+package core;
 
 public enum DecideWhatToDo implements Activity {
     SMARTGoals("For each point discussed further come up with a SMART goal. Can be done in small teams if there are lots of issues and/or people."),
@@ -14,7 +12,7 @@ public enum DecideWhatToDo implements Activity {
 
     @Override
     public String getTitle() {
-        return unCamel(name());
+        return StringUtils.unCamel(name());
     }
 
     @Override

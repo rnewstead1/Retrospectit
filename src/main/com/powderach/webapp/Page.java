@@ -1,5 +1,6 @@
-package com.powderach;
+package webapp;
 
+import core.*;
 import org.antlr.stringtemplate.StringTemplate;
 import org.antlr.stringtemplate.StringTemplateGroup;
 
@@ -13,7 +14,7 @@ public class Page {
     private final StringTemplateGroup templates;
 
     public Page() {
-        this.templates = new StringTemplateGroup("template group", "../retrospectit/src/main/webapp/templates");
+        this.templates = new StringTemplateGroup("template group", "../retrospectit/src/main/com/powderach/webapp/templates");
     }
 
     public String generate() throws IOException {

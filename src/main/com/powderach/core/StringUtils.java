@@ -1,4 +1,4 @@
-package com.powderach;
+package core;
 
 public class StringUtils {
 
