@@ -14,11 +14,13 @@
         </script>
     </head>
     <body>
+    <div class="content-wrapper">
         <div class="heading">
             <h1>$title$</h1>
         </div>
         <div class="body">
             $body$
+        </div>
     </div>
     </body>
 </html>
