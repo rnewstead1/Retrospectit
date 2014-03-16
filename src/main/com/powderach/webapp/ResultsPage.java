@@ -13,7 +13,6 @@ public class ResultsPage extends Page {
     @Override
     public void setOtherAttributes(StringTemplate page) {
         page.setAttribute("activities", activityPicker.activities());
-        page.setAttribute("title", "Retrospectit");
     }
 
     @Override

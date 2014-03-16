@@ -14,8 +14,8 @@ public abstract class Page {
 
     public String generate() throws IOException {
         StringTemplate page = templates.getInstanceOf("page");
-        StringTemplate body = body();
-        page.setAttribute("body", body);
+        page.setAttribute("title", "Retrospectit");
+        page.setAttribute("body", body());
         setOtherAttributes(page);
 
         return page.toString();
@@ -23,6 +23,6 @@ public abstract class Page {
 
     public abstract StringTemplate body();
 
-    public abstract void setOtherAttributes(StringTemplate page);
+    public void setOtherAttributes(StringTemplate page) {};
 
 }

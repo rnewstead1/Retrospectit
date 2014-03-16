@@ -20,8 +20,8 @@ public class ServletServer {
         ServletContextHandler baseContextHandler = new ServletContextHandler(SESSIONS);
         baseContextHandler.setContextPath(ROOT_CONTEXT);
 
-        BaseServlet baseServlet = new BaseServlet();
-        baseContextHandler.addServlet(new ServletHolder(baseServlet), "");
+        baseContextHandler.addServlet(new ServletHolder(new BaseServlet(new LandingPage())), "");
+        baseContextHandler.addServlet(new ServletHolder(new BaseServlet(new ResultsPage())), "/results");
 
         ResourceHandler staticResourceHandler = new ResourceHandler();
         staticResourceHandler.setResourceBase("../retrospectit/src/main/com/powderach/webapp");

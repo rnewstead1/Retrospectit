@@ -10,8 +10,8 @@ public class BaseServlet extends HttpServlet {
 
     private final Page page;
 
-    public BaseServlet() {
-        page = new ResultsPage();
+    public BaseServlet(Page page) {
+        this.page = page;
     }
 
     @Override

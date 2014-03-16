@@ -4,6 +4,7 @@ import core.utils.StringUtils;
 
 public enum GatherData implements Activity {
     MadSadGlad,
+    ProudsAndSorries
     ;
 
     @Override
