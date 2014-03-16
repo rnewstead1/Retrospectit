@@ -8,10 +8,15 @@ import java.io.IOException;
 
 public class BaseServlet extends HttpServlet {
 
+    private final Page page;
+
+    public BaseServlet() {
+        page = new ResultsPage();
+    }
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            Page page = new Page();
             writeToResponse(response, page.generate(), 200);
         } catch (RuntimeException e) {
             writeToResponse(response, e.getMessage(), 400);
